@@ -7,18 +7,18 @@ use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
 {
-    public $categories = [
-        [
-            'id' => 1,
-            'name' => 'Cafe',
-            'description' => '',
-        ],
-        [
-            'id' => 2,
-            'name' => 'Chicken',
-            'description' => '',
-        ],
-    ];
+    // public $categories = [
+    //     [
+    //         'id' => 1,
+    //         'name' => 'Cafe',
+    //         'description' => '',
+    //     ],
+    //     [
+    //         'id' => 2,
+    //         'name' => 'Chicken',
+    //         'description' => '',
+    //     ],
+    // ];
 
     private function getCategories()
     {
@@ -30,8 +30,11 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        foreach ($this->getCategories() as $category) {
-            Category::create($category);
+        // Tạo 1000 bản ghi ngẫu nhiên
+        for ($i = 1; $i <= 1000; $i++) {
+            Category::create([
+                'name' => 'Category ' . $i,
+            ]);
         }
     }
 }
